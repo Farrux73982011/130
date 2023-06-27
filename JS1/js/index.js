@@ -88,11 +88,9 @@ for(let product of products){
 for (let product of products) {
     for (let category of categories) {
         if (product.type === category.type) {
+            category.total += product.price
             category.count++
             category.arr.push(product.name)
-        }
-        if (product.type === category.type) {
-            category.total += product.price
         }
         product.discount = `-${product.price * discount / 100}`
     }
