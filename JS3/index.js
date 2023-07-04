@@ -1,15 +1,36 @@
-function min(a, b) {
-  if (typeof a === "number") {
-    return Math.min(a, b);
-  } else if (Array.isArray(a)) {
-    return Math.min(...a);
-  } else if (typeof a === "object") {
-    let arr = Object.values(a);
+// function min(a, b) {
+//   if (typeof a === "number") {
+//     return Math.min(a, b);
+//   } else if (Array.isArray(a)) {
+//     return Math.min(...a);
+//   } else if (typeof a === "object") {
+//     let arr = Object.values(a);
 
-    return Math.min(...arr);
-  } else if (typeof a === "object") {
-  }
+//     return Math.min(...arr);
+//   } else if (typeof a === "object") {
+    
+//   }
+// }
+function min() {
+    let min = Infinity;
+    
+    for (let i = 0; i < arguments.length; i++) {
+      if (typeof arguments[i] === 'object') {
+        for (let key in arguments[i]) {
+          if (arguments[i][key] < min) {
+            min = arguments[i][key];
+          }
+        }
+      } else {
+        if (arguments[i] < min) {
+          min = arguments[i];
+        }
+      }
+    }
+    
+    return min;
 }
+  
 
 console.log(
   min(1, 2),
