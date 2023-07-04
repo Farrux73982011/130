@@ -54,5 +54,5 @@ function bubbleSort(arr) {
 }
 
 let arr2 = [1, 56, 72, 30, 70, 73, 0];
-let sortedArr = bubbleSort(arr2);
-console.log(sortedArr);
+bubbleSort(arr2);
+console.log(arr2);
